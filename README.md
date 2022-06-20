@@ -55,7 +55,7 @@ cbar = fig.colorbar(cf)
 
 result:
 
-![matplotlib tb_inferno example](https://github.com/artiedins/tbcm/blob/main/images/mpl_tb_oleron.png)
+![matplotlib tb_inferno example](https://github.com/artiedins/tbcm/blob/main/images/mlp_tb_oleron.png)
 
 
 ### With pytorch
@@ -73,7 +73,8 @@ then to use tb_inferno, do:
 ```python
 from PIL import Image
 
-z = torch.cos(torch.linspace(-1,1,256).view(1,-1)*torch.pi)*torch.sin(torch.linspace(-1,1,256).view(-1,1)*torch.pi)
+z = torch.cos(torch.linspace(-1, 1, 256).view(1, -1) * torch.pi) * torch.sin(
+    torch.linspace(-1, 1, 256).view(-1, 1) * torch.pi)
 z.add_(1).div_(2)
 
 h,w = z.shape
