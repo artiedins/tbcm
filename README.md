@@ -77,17 +77,14 @@ Then define this mapping function to convert data to a range appropriate for thi
 
 ```python
 def map_values(data, cm_range=(0.126, 0.99), invalid=None):
-
     if invalid is None:
         hist, bin_edges = torch.histogram(data.view(-1), bins=int(1e4))
     else:
         hist, bin_edges = torch.histogram(data[~invalid], bins=int(1e4))
-
     bin_centers = (bin_edges[:-1] + bin_edges[1:]) / 2
     cdf = hist.cumsum(dim=0)
     cdf = cdf / cdf[-1]
     out = torch.from_numpy(np.interp(data.numpy(), bin_centers.numpy(), cdf.numpy()))
-
     scale = cm_range[1] - cm_range[0]
     if invalid is None:
         out = out - out.min()
@@ -95,9 +92,7 @@ def map_values(data, cm_range=(0.126, 0.99), invalid=None):
     else:
         out = out - out[~invalid].min()
         out = out * scale / out[~invalid].max()
-
     out = out + cm_range[0]
-
     return out
 ```
 
