@@ -1027,6 +1027,4 @@ tb_oleron_data = [
     [224, 229, 202],
 ]
 
-tb_oleron = ListedColormap(
-    [[c[0] / 255, c[1] / 255, c[2] / 255] for c in tb_oleron_data], name="tb_oleron"
-)
+tb_oleron = ListedColormap([[c[0] / 255, c[1] / 255, c[2] / 255] for c in tb_oleron_data], name="tb_oleron")

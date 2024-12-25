@@ -1028,6 +1028,4 @@ tb_inferno_data = [
 ]
 
 
-tb_inferno = ListedColormap(
-    [[c[0] / 255, c[1] / 255, c[2] / 255] for c in tb_inferno_data], name="tb_inferno"
-)
+tb_inferno = ListedColormap([[c[0] / 255, c[1] / 255, c[2] / 255] for c in tb_inferno_data], name="tb_inferno")
