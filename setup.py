@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="tbcm",
-    version="0.3",
+    version="0.4",
     description="Ten Bit Color Maps",
     author="Artie Dins",
     url="https://github.com/artiedins/tbcm",
